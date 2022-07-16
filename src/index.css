@@ -18,23 +18,21 @@ small {
 }
 
 .container {
-    margin: 0 auto;
-    padding: 40px;
+    margin-left: 4vw;
+    margin-right: 4vw;
 }
 
 .title {
-    font-size: 4rem;
-    text-align: center;
-    color: black ;
-    background: #DBA506;
-    margin : 0 auto ;
-    margin-bottom : 40px ;
-    border-radius: 8px;
-    font-family: Impact, Charcoal, sans-serif ;
+    font-size: 1.2em;
+}
+
+.catchy_paragraph {
+    margin-top: 17vh;
 }
 
 .form {
     display:grid;
+    margin-top: 4vh;
 }
 
 .label {

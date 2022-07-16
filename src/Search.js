@@ -16,23 +16,26 @@ export default function SearchMovies(){
             const res = await fetch(url);
             const data  = await res.json();
             setMovies(data.results);
-        }catch(err){
-            console.error(err);
+        } catch(err){
+            alert("error")
         }
     }
     
     return (
         <>
+            <div>
+                <h1 className="catchy_paragraph">find any movie with just <span>key words</span></h1>
+                <p>the project uses tmdb API</p>
+            </div>
             <form className="form" onSubmit={searchMovies}>
-                <label className="label" htmlFor="query">Movie Name</label>
                 <input className="input" type="text" name="query"
-                    placeholder="example: wolf of wall street"
+                    placeholder="example: titanic, world, ... "
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
                 <button className="button" type="submit">Search</button>
             </form>
             <div className="card-list">
-                {movies.filter(movie => movie.poster_path).map(movie => (
+                {movies.length > 0 ? movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="card" key={movie.id}>
                         <img className="card--image"
                             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
@@ -46,7 +49,7 @@ export default function SearchMovies(){
                         </div>
 
                     </div>
-                ))}
+                )): "nothing found"}
             </div>    
         </>
     )
